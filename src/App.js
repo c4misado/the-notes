@@ -23,25 +23,27 @@ class App extends React.Component {
   changeKey = (event) => {
     let newKey = event.target.value;
     this.setState({key: newKey});
-    this.updateActiveScale();
+    this.updateActiveScale(newKey,null)
   }
 
   changeScale = (event) => {
     let keyScale = scales[event.target.value];
     this.setState({scale: keyScale});
-    this.updateActiveScale();
+    this.updateActiveScale(null, keyScale)
   }
 
-  updateActiveScale = () => {
-    let root = this.state.key;
-    let notes = this.state.scale;
+  updateActiveScale = (key, scale) => {
+    let root = key || this.state.key;
+    let notes = scale || this.state.scale;
     let active = [];
     let newNote;
     notes.map(note => {
       newNote = (parseInt(note) + parseInt(root));
       active.push(newNote < 12 ? newNote : newNote % 12);
-      return active;
     });
+    console.log(root);
+    console.log(notes);
+    console.log(active);
     this.setState({activeScale: active});
   }
 
