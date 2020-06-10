@@ -13,6 +13,37 @@ class String extends React.Component {
         }
     }
 
+    componentDidMount = () => {
+        let myArr = [];
+        for(let i=0; i < 23; i++) {
+            console.log(i);
+            let valueX = this.props.openNote + i;
+            let valueY =  valueX % 12;
+            if(i == 3 || i == 5 || i == 7 || i == 9 || i == 15 || i == 17 || i == 19 || i == 21) {
+                myArr.push({symbol:"•", value:valueX, absoluteNote: valueY})           
+            } else if (i == 12) {
+                myArr.push({symbol:"••", value:valueX, absoluteNote: valueY})
+            } else if (i == 0) {          
+                myArr.push({symbol:"O", value:valueX, absoluteNote: valueY})
+            } else {
+                myArr.push({symbol:"_", value:valueX, absoluteNote: valueY})
+            }
+        }
+        this.setState({list: myArr})
+    }
+    render() {
+        console.log(this.state.list);
+        console.log(this.state.absoluteNote);
+        return (
+            <div className="String">
+                <ul id={this.props.string}>{this.state.list.map(item => 
+                <li><Note symbol={item.symbol} value={item.value} blah={item.absoluteNote}/></li>)}</ul>
+            </div>
+        )
+    }
+}
+
+
     // componentDidMount = () => {
     //     this.iterateNoteComp(5);
 
@@ -30,47 +61,7 @@ class String extends React.Component {
     //generate frets with loop, with parameter for desired number of frets
     //allows you to see different patterns base on tuning, string legnth, etc
 
-    
-
-
-    componentDidMount = () => {
-        let myArr = [];
-        for(let i=0; i < 23; i++) {
-            console.log(i);
-            let valueX = this.props.openNote + i;
-            let valueY =  valueX % 12;
-            if(i == 3 || i == 5 || i == 7 || i == 9 || i == 15 || i == 17 || i == 19 || i == 21) {
-                myArr.push({symbol:"•", value:valueX, absoluteNote: valueY})           
-                // console.log("•");
-                // console.log(valueX);
-            } else if (i == 12) {
-                myArr.push({symbol:"••", value:valueX, absoluteNote: valueY})
-                // console.log("••");
-                // console.log(valueX);
-            } else if (i == 0) {          
-                myArr.push({symbol:"O", value:valueX, absoluteNote: valueY})
-                // console.log("open");
-                // console.log(valueX);
-            } else {
-                myArr.push({symbol:"_", value:valueX, absoluteNote: valueY})
-                // console.log("-");
-                // console.log(valueX);
-            }
-        }
-        this.setState({list: myArr})
-    }
-
-    render() {
-        console.log(this.state.list);
-        console.log(this.state.absoluteNote);
-        return (
-            <div className="String">
-                {/* {iterateNoteComp(5)} */}
-        <ul id={this.props.string}>{this.state.list.map(item => 
-            <li><Note symbol={item.symbol} value={item.value} blah={item.absoluteNote}/></li>)}</ul>
-        
-
-                {/* <ul id={this.props.string}>
+    {/* <ul id={this.props.string}>
                     <li><Note symbol="Open" value={this.props.openNote}/></li>
                     <li><Note symbol="-" value={this.props.openNote + 1}/></li>
                     <li><Note symbol="-"value={this.props.openNote + 2}/></li>
@@ -95,9 +86,5 @@ class String extends React.Component {
                     <li> <Note symbol="•"value={this.props.openNote + 22}/></li>
                 </ul> */}
                 {/* <button type="button" onClick={this.thing}>Hello</button> */}
-            </div>
-        )
-    }
-}
 
 export default String;

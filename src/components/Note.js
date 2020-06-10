@@ -21,7 +21,6 @@ class Note extends React.Component {
                     <h3>{this.props.symbol}</h3>
                     <h3>{this.props.value}</h3>
                     <h3>{this.props.blah}</h3>
-
                     <button type="button" onClick={this.handleClick}></button>
                 </div>
             </div>
