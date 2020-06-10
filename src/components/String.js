@@ -32,8 +32,8 @@ class String extends React.Component {
         this.setState({list: myArr})
     }
     render() {
-        console.log(this.state.list);
-        console.log(this.state.absoluteNote);
+        // console.log(this.state.list);
+        // console.log(this.state.absoluteNote);
         return (
             <div className="String">
                 <ul id={this.props.string}>{this.state.list.map(item => 
