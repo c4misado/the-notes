@@ -12,12 +12,12 @@ class App extends React.Component {
   render(){
   return ( 
     <div className="App">
-      <String string="LowE" openNote={-7}/>
-      <String string="A" openNote={0}/>
-      <String string="D" openNote={5}/>
-      <String string="G" openNote={10}/>
-      <String string="B" openNote={14}/>
-      <String string=" HighE" openNote={19}/>
+      <String openNote={115}/>
+      <String openNote={120}/>
+      <String openNote={125}/>
+      <String openNote={130}/>
+      <String openNote={134}/>
+      <String openNote={139}/>
     </div>
     )
   }
