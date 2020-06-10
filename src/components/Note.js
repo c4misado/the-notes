@@ -19,8 +19,8 @@ class Note extends React.Component {
             <div className="Note">
                 <div className={this.state.inScale ? "in" : "out"}>
                     <h3>{this.props.symbol}</h3>
-                    {/* <h3>{this.props.value}</h3>
-                    <h3>{this.props.blah}</h3> */}
+                    <h3>{this.props.value}</h3>
+                    <h3>{this.props.abs}</h3>
                     <button type="button" onClick={this.handleClick}></button>
                 </div>
             </div>

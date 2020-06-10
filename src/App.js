@@ -56,7 +56,6 @@ class App extends React.Component {
       {this.state.activeScale.map(item => <li>{item}</li>)}
       <p>Relative:</p>
       {this.state.scale.map(item => <li>{item}</li>)}
-
       <label for="Select Key">Select a key:</label>
       <select name="Select Key" onChange={this.changeKey}>
         <option value="0">A</option>

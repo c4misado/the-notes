@@ -37,7 +37,7 @@ class String extends React.Component {
         return (
             <div className="String">
                 <ul id={this.props.string}>{this.state.list.map(item => 
-                <li><Note symbol={item.symbol} value={item.value} blah={item.absoluteNote}/></li>)}</ul>
+                <li><Note symbol={item.symbol} value={item.value} abs={item.absoluteNote}/></li>)}</ul>
             </div>
         )
     }
