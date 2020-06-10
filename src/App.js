@@ -1,8 +1,6 @@
 import React from 'react';
-// import logo from './logo.svg';
 // import './App.css';
 import String from "./components/String";
-
 const scales = {
   lydian: [0, 2, 4, 6, 7, 9, 11],
   majorScale: [0, 2, 4, 5, 7, 9, 11],
@@ -18,29 +16,37 @@ class App extends React.Component {
     super(props);
     this.state = {
       key: 0,
-      scale: [],
+      scale: [0, 2, 4, 5, 7, 9, 11],
+      activeScale: [0, 2, 4, 5, 7, 9, 11]
     }
   }
-
   changeKey = (event) => {
-    this.setState({key: event.target.value})
+    let newKey = event.target.value;
+    this.setState({key: newKey});
   }
 
   changeScale = (event) => {
-    const len = scales[event.target.value];
-    let keyScale = len.map(item => { 
-      let check = parseInt(item) + parseInt(this.state.key);
-      return (check < 12) ? check : check % 12
-    });
+    let keyScale = scales[event.target.value];
     console.log(keyScale);
+    this.setState({scale: keyScale});
+  }
+
+  componentDidUpdate() {
+    // let activeKeyScale = [];
+    // (this.state.scale.map(note => {
+    //   activeKeyScale.push(parseInt(note) + parseInt(this.state.key));
+    // }));
+    // this.setState({activeScale: activeKeyScale});
   }
 
   render(){
   return ( 
     <div className="App">
       <h1>{this.state.key}</h1>
-      <h2>{this.state.scale}</h2>
-
+      <p>Active:</p>
+      {this.state.activeScale.map(item => <li>{item}</li>)}
+      <p>Relative:</p>
+      {this.state.scale.map(item => <li>{item}</li>)}
 
       <label for="Select Key">Select a key:</label>
       <select name="Select Key" onChange={this.changeKey}>
@@ -58,13 +64,16 @@ class App extends React.Component {
         <option value="11">G sharp</option>
       </select>
 
-
       <label for="Select Scale">Select a scale:</label>
       <select name="Select Scale" onChange={this.changeScale}>
         <option value="majorScale">Major</option>
         <option value="minorScale">Minor</option>
+        <option value="lydian">Lydian</option>
+        <option value="mixolydian">Mixolydian</option>
+        <option value="dorian">Dorian</option>
+        <option value="phrygian">Phrygian</option>
+        <option value="locrian">Locrian</option>
       </select>
-
 
       <String openNote={115}/>
       <String openNote={120}/>
