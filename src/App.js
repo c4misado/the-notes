@@ -23,25 +23,30 @@ class App extends React.Component {
   changeKey = (event) => {
     let newKey = event.target.value;
     this.setState({key: newKey});
+    // this.updateActiveScale();
   }
 
   changeScale = (event) => {
     let keyScale = scales[event.target.value];
-    console.log(keyScale);
+    // console.log(keyScale);
     this.setState({scale: keyScale});
+    // this.updateActiveScale();
   }
 
-  componentDidUpdate() {
-    // let activeKeyScale = [];
-    // (this.state.scale.map(note => {
+  updateActiveScale = () => {
+    console.log(this.state.key);
+    console.log(this.state.scale);
+    let activeKeyScale = [];
+    // this.state.scale.map(note => {
     //   activeKeyScale.push(parseInt(note) + parseInt(this.state.key));
-    // }));
+    // });
     // this.setState({activeScale: activeKeyScale});
   }
 
   render(){
   return ( 
     <div className="App">
+      <button onClick={this.updateActiveScale}>YUH</button>
       <h1>{this.state.key}</h1>
       <p>Active:</p>
       {this.state.activeScale.map(item => <li>{item}</li>)}
