@@ -9,7 +9,8 @@ class String extends React.Component {
             openNote: 0,
             value: 0,
             list: [],
-            absoluteNote: this.props.openNote % 12
+            absoluteNote: this.props.openNote % 12,
+            activeS: this.props.xscale 
         }
     }
 
@@ -32,12 +33,16 @@ class String extends React.Component {
         this.setState({list: myArr})
     }
     render() {
+        if (this.state.activeS != this.props.xscale) {
+            this.setState({activeS: this.props.xscale});
+        }
         // console.log(this.state.list);
         // console.log(this.state.absoluteNote);
         return (
             <div className="String">
-                <ul id={this.props.string}>{this.state.list.map(item => 
-                <li><Note symbol={item.symbol} value={item.value} abs={item.absoluteNote}/></li>)}</ul>
+                <h1>{this.state.activeS}</h1>
+                {/* <ul id={this.props.string}>{this.state.list.map(item => 
+                <li><Note symbol={item.symbol} value={item.value} abs={item.absoluteNote}/></li>)}</ul> */}
             </div>
         )
     }
