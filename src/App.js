@@ -51,11 +51,11 @@ class App extends React.Component {
   return ( 
     <div className="App">
       {/* <button onClick={this.updateActiveScale}>YUH</button> */}
-      <h1>{this.state.key}</h1>
+      {/* <h1>{this.state.key}</h1>
       <p>Relative:</p>
       {this.state.scale.map(item => <li>{item}</li>)}
       <p>Active:</p>
-      {this.state.activeScale.map(item => <li>{item}</li>)}
+      {this.state.activeScale.map(item => <li>{item}</li>)} */}
       <label for="Select Key">Select a key:</label>
       <select name="Select Key" onChange={this.changeKey}>
         <option value="0">A</option>
@@ -84,11 +84,11 @@ class App extends React.Component {
       </select>
 
       <String openNote={115} xscale={this.state.activeScale}/>
-      {/* <String openNote={120}/>
-      <String openNote={125}/>
-      <String openNote={130}/>
-      <String openNote={134}/>
-      <String openNote={139}/> */}
+      <String openNote={120} xscale={this.state.activeScale}/>
+      <String openNote={125} xscale={this.state.activeScale}/>
+      <String openNote={130} xscale={this.state.activeScale}/>
+      <String openNote={134} xscale={this.state.activeScale}/>
+      <String openNote={139} xscale={this.state.activeScale}/>
     </div>
     )
   }

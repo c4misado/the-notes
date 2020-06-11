@@ -16,7 +16,7 @@ class String extends React.Component {
 
     componentDidMount = () => {
         let myArr = [];
-        for(let i=0; i < 23; i++) {
+        for(let i=0; i < 22; i++) {
             console.log(i);
             let valueX = this.props.openNote + i;
             let valueY =  valueX % 12;
@@ -40,9 +40,9 @@ class String extends React.Component {
         // console.log(this.state.absoluteNote);
         return (
             <div className="String">
-                <h1>{this.state.activeS}</h1>
-                {/* <ul id={this.props.string}>{this.state.list.map(item => 
-                <li><Note symbol={item.symbol} value={item.value} abs={item.absoluteNote}/></li>)}</ul> */}
+                {/* <h1>{this.state.activeS}</h1> */}
+                <ul id={this.props.string}>{this.state.list.map(item => 
+                <li><Note symbol={item.symbol} value={item.value} abs={item.absoluteNote} notes={this.state.activeS}/></li>)}</ul>
             </div>
         )
     }

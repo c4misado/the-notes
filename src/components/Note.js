@@ -17,11 +17,12 @@ class Note extends React.Component {
     render() {
         return (
             <div className="Note">
-                <div className={this.state.inScale ? "in" : "out"}>
+                <div className={this.props.notes.includes(this.props.abs) ? "in" : "out"}>
+                {/* <h3>{this.props.notes}</h3> */}
                     <h3>{this.props.symbol}</h3>
-                    <h3>{this.props.value}</h3>
-                    <h3>{this.props.abs}</h3>
-                    <button type="button" onClick={this.handleClick}></button>
+                    {/* <h3>{this.props.value}</h3> */}
+                    {/* <h3>{this.props.abs}</h3> */}
+                    {/* <button type="button" onClick={this.handleClick}></button> */}
                 </div>
             </div>
         )
