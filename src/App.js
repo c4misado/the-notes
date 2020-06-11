@@ -1,5 +1,5 @@
 import React from 'react';
-// import './App.css';
+import './App.css';
 import String from "./components/String";
 const scales = {
   lydian: [0, 2, 4, 6, 7, 9, 11],
