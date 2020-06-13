@@ -11,14 +11,14 @@ class Note extends React.Component {
     }
 
     handleClick = () => {
-        this.setState({inScale: !this.state.inScale});
+        this.setState({ inScale: !this.state.inScale });
     }
 
     render() {
         return (
             <div className="Note">
                 <div className={this.props.notes.includes(this.props.abs) ? "in" : "out"}>
-                {/* <h3>{this.props.notes}</h3> */}
+                    {/* <h3>{this.props.notes}</h3> */}
                     <h3>{this.props.symbol}</h3>
                     {/* <h3>{this.props.value}</h3> */}
                     {/* <h3>{this.props.abs}</h3> */}
@@ -28,5 +28,4 @@ class Note extends React.Component {
         )
     }
 }
-
 export default Note;
