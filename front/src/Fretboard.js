@@ -114,10 +114,12 @@ class Fretboard extends React.Component {
         </section>
 
         <section id="info">
-          <h3>Disambiguation:</h3>
+          <h3>About:</h3>
           <h2 id="orange">Fret numbers highlighted in <em>orange</em> and correspond vertically.</h2>
           <p className="green">Active notes that can be used in the selected scale and key are highlighted in <em>green</em>.</p>
           <h3>Strings are stacked horizontally in standard orientation.</h3>
+          <h3>Each dot or dash represents one fretting position.</h3>
+          <h3>Use the selectors above to choose your desired key and scale</h3>
 
         </section>
       </div>

@@ -1,6 +1,6 @@
 {
   "name": "music",
-  "proxy": "http://localhost:3799",
+  "proxy": "http://localhost:3090",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
