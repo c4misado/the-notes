@@ -50,12 +50,8 @@ class Fretboard extends React.Component {
   render() {
     return (
       <div className="Fretboard">
-        {/* <button onClick={this.updateActiveScale}>YUH</button> */}
-        {/* <h1>{this.state.key}</h1>
-      <p>Relative:</p>
-      {this.state.scale.map(item => <li>{item}</li>)}
-      <p>Active:</p>
-      {this.state.activeScale.map(item => <li>{item}</li>)} */}
+
+      <section id="controls">
         <label for="Select Key">Select a key:</label>
         <select name="Select Key" onChange={this.changeKey}>
           <option value="0">A</option>
@@ -81,9 +77,11 @@ class Fretboard extends React.Component {
           <option value="dorian">Dorian</option>
           <option value="phrygian">Phrygian</option>
           <option value="locrian">Locrian</option>
-        </select>
+        </select>     
+        </section>
 
-        <ul>
+        <section id="board">
+        <ul className="FretNumbers">
           <li>Open</li>
           <li> </li>
           <li> </li>
@@ -113,10 +111,18 @@ class Fretboard extends React.Component {
         <String openNote={130} xscale={this.state.activeScale} />
         <String openNote={134} xscale={this.state.activeScale} />
         <String openNote={139} xscale={this.state.activeScale} />
+        </section>
+
+        <section id="info">
+          <h3>Disambiguation:</h3>
+          <h2 id="orange">Fret numbers highlighted in <em>orange</em>.</h2>
+          <p className="green">Active notes that can be used in the selected scale are highlighted in <em>green</em>.</p>
+          <h3>Strings are stacked horizontally in standard orientation.</h3>
+
+        </section>
       </div>
     )
   }
 }
-
 
 export default Fretboard;

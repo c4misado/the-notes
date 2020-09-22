@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
+import styled, { css } from 'styled-components'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Fretboard from './Fretboard';
 import Suggestion from './Suggestion';
+import Home from './Home';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class App extends React.Component {
     this.state = {
     }
   }
+
   render() {
     return (
       <div className="App">
@@ -31,7 +34,7 @@ class App extends React.Component {
             </nav>
             <Switch>
               <Route exact path="/">
-                <Home />
+                  <Home/>
               </Route>
               <Route path="/Fretboard">
                 <Fretboard />
@@ -46,15 +49,5 @@ class App extends React.Component {
     )
   }
 }
-
-function Home() {
-  return (
-    <div>
-      <h1>FretFinder</h1>
-      <p>The place to find your notes.</p>
-    </div>
-  )
-}
-
 
 export default App;

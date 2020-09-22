@@ -1,0 +1,22 @@
+body {
+    /* background-color: darkblue; */
+    text-align: center;
+}
+h1 {
+    font-size: 75px;
+}
+   
+p {
+
+     font-size: 25px;
+}
+   
+img {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+ }
+
+ img:hover {
+    opacity: 80%;
+ }
