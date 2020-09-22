@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import "./Suggestion.css";
 
 
 const Suggestion = () => {
-    const [name, setName] = useState("1");
-    const [email, setEmail] = useState("2");
-    const [notes, setNotes] = useState("3");
-    const [message, setMessage] = useState("4");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [notes, setNotes] = useState("");
+    const [message, setMessage] = useState("");
     const [flash, setFlash] = useState();
 
     const handleSubmit = (e) => {
@@ -31,13 +32,14 @@ const Suggestion = () => {
 
     return (
         <div>
-            <h1>{flash}</h1>
+            <h1>Suggest a mode or scale!</h1>
+            <p>Be sure to leave us a message with your contact information and an explanation of the scale's values and/or resources for music theory.</p>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <input onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} />
-                <input onChange={(e) => setEmail(e.target.value)} type="text" name="email" value={email} />
-                <input onChange={(e) => setNotes(e.target.value)} type="text" name="notes" value={notes} />
-                <input onChange={(e) => setMessage(e.target.value)} type="text" name="message" value={message} />
-                <input type="submit" value="Submit" />
+                <input onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} placeholder="Name"/>
+                <input onChange={(e) => setEmail(e.target.value)} type="text" name="email" value={email} placeholder="Email"/>
+                <input onChange={(e) => setNotes(e.target.value)} type="text" name="notes" value={notes} placeholder="Notes"/>
+                <input onChange={(e) => setMessage(e.target.value)} type="text" name="message" value={message} placeholder="Message"/>
+                <input type="submit" value="Submit"/>
             </form>
         </div>
     );
